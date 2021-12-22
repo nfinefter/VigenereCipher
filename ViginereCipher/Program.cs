@@ -49,6 +49,10 @@ namespace ViginereCipher
 
                 for (int j = 0; j < input.Length; j++)
                 {
+                if (newString[indexCount] == ' ')
+                {
+                    //newString[indexCount]
+                }
                     int index = (char)(newString[indexCount] - 97);
                     int keyIndex = (char)(key[keyCount] - 97);
 
@@ -56,8 +60,13 @@ namespace ViginereCipher
 
                     encryptedMsg += encryptedLetter;
                     indexCount++;
+                
                 keyCount++;
+                if (keyCount >= key.Length)
+                {
+                    keyCount = 0;
                 }
+            }
 
             return encryptedMsg;
         }
